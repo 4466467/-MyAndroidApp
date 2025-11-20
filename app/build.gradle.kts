@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
 }
 
 android {
@@ -39,6 +40,8 @@ android {
     }
 }
 
+
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -49,6 +52,8 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.appcompat)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -56,4 +61,32 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    //implementation("androidx.appcompat:appcompat:1.6.1")
+    // 其他依赖...
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.9.0")
+
+    // 高德地图SDK - 使用兼容版本组合
+    //implementation("com.amap.api:3dmap:10.0.600")
+    //implementation("com.amap.api:search:9.7.1")
+    //implementation("com.amap.api:location:6.5.1")    // 定位SDK
+    //implementation("com.amap.api:cluster:latest.integration")
+
+        // 使用相同版本号，避免兼容性问题
+    implementation("com.amap.api:3dmap:9.8.2")
+    //implementation("com.amap.api:location:6.2.0")
+    implementation("com.amap.api:search:9.7.0")
+    //implementation("com.amap.api:cluster:1.0.1") // 检查最新版本号
+
+
+    // 确保使用Kotlin DSL语法
+    implementation("androidx.core:core-ktx:1.12.0")
+    // 材料设计组件
+    //implementation("com.google.android.material:material:1.10.0")
+// 约束布局
+    //implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 }
+
+
+
+
