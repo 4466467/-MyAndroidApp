@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:orientation="horizontal">
+
+    <!-- 接收消息容器 -->
+    <LinearLayout
+        android:id="@+id/ll_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_received"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_received_message"
+            android:padding="10dp"
+            android:maxWidth="240dp"
+            android:textColor="#000000"/>
+    </LinearLayout>
+
+    <!-- 发送消息容器 -->
+    <LinearLayout
+        android:id="@+id/ll_sent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginStart="80dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_sent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_sent_message"
+            android:padding="10dp"
+            android:maxWidth="240dp"
+            android:layout_gravity="end"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,24 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#f5f5f5"
+    android:autofillHints="">
 
-    <!-- 地址输入框 -->
-    <EditText
-        android:id="@+id/et_location"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="请输入详细地址，如：云南大学呈贡校区梓苑食堂"
-        android:inputType="textCapWords" />
+        android:orientation="vertical"
+        android:autofillHints="">
 
-    <!-- 确认按钮 -->
-    <Button
-        android:id="@+id/btn_confirm_location"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="确认地址并发布" />
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/publish_secondhand_book"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"
+            android:autofillHints="" />
 
-</LinearLayout>
+        <!-- 书籍标题 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/book_title"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="@string/enter_book_name"
+            android:inputType="textCapWords"
+            android:autofillHints="bookTitle"
+            android:importantForAutofill="yes"
+            android:background="@drawable/edittext_bg"
+            android:padding="12dp"
+            android:gravity="center_vertical" />
+
+        <!-- 价格 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/price"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/et_price"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="0.00"
+            android:inputType="numberDecimal"
+            android:autofillHints="price"
+            android:importantForAutofill="yes"
+            android:background="@drawable/edittext_bg"
+            android:padding="12dp"
+            android:gravity="center_vertical"/>
+
+        <!-- 位置信息（只读） -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/trading_location"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/et_location"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="@string/location_info"
+            android:enabled="false"
+            android:autofillHints="location"
+            android:importantForAutofill="no"
+            android:background="@drawable/edittext_bg"
+            android:padding="12dp"
+            android:gravity="center_vertical"/>
+
+        <!-- 书籍描述 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/book_description"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:hint="@string/enter_book_details"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:autofillHints="description"
+            android:importantForAutofill="yes"
+            android:background="@drawable/edittext_bg" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="卖家联系方式 *"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/et_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="请输入手机号或微信号"
+            android:inputType="text"
+            android:maxLines="1"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="买家将通过此联系方式联系您"
+            android:textSize="12sp"
+            android:textColor="#666666" />
+
+        <!-- 按钮区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal"
+            android:autofillHints="">
+
+            <!-- 发布按钮 -->
+            <Button
+                android:id="@+id/btn_publish"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="@string/publish_book"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:autofillHints=""
+                android:background="@color/colorPrimary"
+                android:textColor="@android:color/white" />
+
+            <!-- 取消按钮 -->
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="@string/cancel"
+                android:textSize="16sp"
+                android:autofillHints=""
+                android:background="@color/gray_light"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
